@@ -13,7 +13,7 @@ import Leetcode from "../assets/gallery/Leetcode.png";
 import bootcamp from "../assets/gallery/bootcamp.jpg";
 import teammeet from "../assets/gallery/teammeet.jpg";
 import aaryaa1 from "../assets/gallery/aaryaa1.jpg";
-import Azure from "../assets/gallery/azure.png";
+import Azure from "../assets/gallery/Azure.png";
 
 const galleryItems = [
  { image: neoGroup, title: "Neocodeathon", tag: "Achievement", tagColor: "#0369a1", tagBg: "#f0f9ff" },
