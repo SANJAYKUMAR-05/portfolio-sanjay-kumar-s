@@ -38,3 +38,5 @@ npm run dev
 ## Author
 
 Sanjay Kumar S
+
+Portfolio deployed successfully
