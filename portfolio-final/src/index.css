@@ -1,0 +1,266 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=DM+Mono:wght@400;500&display=swap');
+@import "tailwindcss";
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; font-size: 110%; }
+body {
+  font-family: 'DM Sans', sans-serif;
+  background: #fafafa;
+  color: #0f1117;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+h1,h2,h3,h4,h5 { font-family: 'Manrope', sans-serif; }
+::selection { background: #dbeafe; color: #1e40af; }
+::-webkit-scrollbar { width: 5px; }
+::-webkit-scrollbar-track { background: #f1f5f9; }
+::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 3px; }
+.section-label {
+  font-family: 'DM Mono', monospace;
+  font-size: 0.72rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #2563eb;
+  font-weight: 500;
+}
+.gradient-text {
+  background: linear-gradient(135deg, #1d4ed8 0%, #7c3aed 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+.code-font { font-family: 'DM Mono', monospace; }
+img { max-width: 100%; }
+
+/* =====================================================
+   RESPONSIVE OVERRIDES — desktop (≥1280px) untouched
+   ===================================================== */
+
+/* Reduce html font-size at smaller viewports so the 110% base
+   scales down gracefully without needing px-level overrides everywhere */
+@media (max-width: 1279px) {
+  html { font-size: 105%; }
+}
+@media (max-width: 1023px) {
+  html { font-size: 100%; }
+}
+@media (max-width: 767px) {
+  html { font-size: 97%; }
+}
+@media (max-width: 479px) {
+  html { font-size: 93%; }
+}
+@media (max-width: 374px) {
+  html { font-size: 88%; }
+}
+
+/* ---- Global container safety ---- */
+@media (max-width: 1279px) {
+  /* All inline maxWidth: 1320 containers — let them breathe */
+  [style*="maxWidth: 1320"], [style*="max-width: 1320px"] {
+    max-width: 100% !important;
+  }
+  [style*="maxWidth: 1210"], [style*="maxWidth: 1320"] {
+    max-width: 100% !important;
+  }
+}
+
+/* ---- NAVBAR ---- */
+@media (max-width: 860px) {
+  .desktop-nav { display: none !important; }
+  .mobile-toggle { display: flex !important; }
+}
+
+/* ---- HERO ---- */
+@media (max-width: 1024px) {
+  .hero-grid {
+    grid-template-columns: 1fr !important;
+    gap: 36px !important;
+  }
+  .hero-grid > div:last-child {
+    order: -1;
+  }
+}
+@media (max-width: 480px) {
+  /* Profile image in hero */
+  .hero-grid > div:last-child div[style*="width: 286"] {
+    width: 220px !important;
+    height: 260px !important;
+  }
+}
+
+/* ---- ABOUT ---- */
+@media (max-width: 860px) {
+  .about-grid {
+    grid-template-columns: 1fr !important;
+    gap: 28px !important;
+  }
+}
+
+/* ---- SKILLS ---- */
+@media (max-width: 960px) {
+  .skills-grid { grid-template-columns: repeat(2, 1fr) !important; }
+}
+@media (max-width: 560px) {
+  .skills-grid { grid-template-columns: 1fr !important; }
+}
+
+/* ---- DSA ---- */
+@media (max-width: 860px) {
+  .dsa-grid {
+    grid-template-columns: 1fr !important;
+    gap: 28px !important;
+  }
+}
+/* Code editor scrollable on small screens */
+@media (max-width: 639px) {
+  .dsa-grid pre {
+    font-size: 11px !important;
+  }
+}
+
+/* ---- PROJECTS ---- */
+@media (max-width: 860px) {
+  .project-card-inner {
+    grid-template-columns: 1fr !important;
+  }
+  .project-content {
+    padding: 24px 20px !important;
+  }
+  .features-grid {
+    grid-template-columns: 1fr !important;
+  }
+}
+/* Slider arrows — keep within viewport */
+@media (max-width: 479px) {
+  /* Reduce padding so arrows don't overflow */
+  [style*="padding: \"0 30.8px\""],
+  [style*='padding: "0 30.8px"'] {
+    padding: 0 !important;
+  }
+}
+
+/* ---- ACHIEVEMENTS ---- */
+@media (max-width: 1024px) {
+  .achieve-grid { grid-template-columns: repeat(3, 1fr) !important; }
+}
+@media (max-width: 768px) {
+  .achieve-grid { grid-template-columns: repeat(2, 1fr) !important; }
+}
+@media (max-width: 480px) {
+  .achieve-grid { grid-template-columns: 1fr !important; }
+}
+
+/* ---- EDUCATION timeline ---- */
+@media (max-width: 479px) {
+  /* timeline content text */
+  [style*="maxWidth: 946"] {
+    max-width: 100% !important;
+  }
+}
+
+/* ---- GALLERY ---- */
+@media (max-width: 480px) {
+  .gallery-arrow { display: none !important; }
+  /* Narrower cards on small phones */
+  [style*="width: 286"][style*="scrollSnapAlign"] {
+    width: 240px !important;
+  }
+}
+
+/* ---- CONTACT ---- */
+@media (max-width: 860px) {
+  .contact-grid {
+    grid-template-columns: 1fr !important;
+    gap: 24px !important;
+  }
+}
+
+/* ---- FOOTER ---- */
+@media (max-width: 768px) {
+  .footer-grid {
+    grid-template-columns: 1fr 1fr !important;
+    gap: 28px !important;
+  }
+}
+@media (max-width: 480px) {
+  .footer-grid { grid-template-columns: 1fr !important; }
+}
+
+/* ---- Prevent horizontal overflow globally ---- */
+section, footer, nav {
+  max-width: 100vw;
+  overflow-x: hidden;
+}
+
+/* ---- Section padding on small screens ---- */
+@media (max-width: 639px) {
+  /* Reduce the 96.8px section padding proportionally */
+  section[id] {
+    padding-top: 64px !important;
+    padding-bottom: 64px !important;
+  }
+}
+@media (max-width: 479px) {
+  section[id] {
+    padding-top: 52px !important;
+    padding-bottom: 52px !important;
+  }
+}
+
+/* Hero section responsive padding */
+@media (max-width: 1024px) {
+  #home { padding-top: 80px !important; padding-bottom: 36px !important; }
+}
+@media (max-width: 639px) {
+  #home { padding-top: 72px !important; padding-bottom: 28px !important; }
+}
+
+/* Prevent inline maxWidth from causing overflow */
+@media (max-width: 639px) {
+  /* Hero bio text maxWidth */
+  [style*="maxWidth: 572"] {
+    max-width: 100% !important;
+  }
+  /* Gallery card width */
+  [style*="width: 286"][style*="flexShrink:0"] {
+    width: 250px !important;
+  }
+}
+@media (max-width: 374px) {
+  [style*="width: 286"][style*="flexShrink:0"] {
+    width: 220px !important;
+  }
+}
+
+/* Tablet: reduce section horizontal padding slightly */
+@media (max-width: 767px) {
+  [style*="padding: \"0 22px\""] {
+    padding-left: 16px !important;
+    padding-right: 16px !important;
+  }
+}
+
+/* Ensure buttons wrap and don't overflow on small phones */
+@media (max-width: 479px) {
+  /* Hero CTA buttons */
+  #home button, #home a[download] {
+    font-size: 13px !important;
+    padding: 10px 18px !important;
+  }
+}
+
+/* DSA tabs scroll naturally */
+@media (max-width: 639px) {
+  [style*="overflowX: \"auto\""][style*="display: \"flex\""] {
+    -webkit-overflow-scrolling: touch;
+  }
+}
+
+/* Gallery horizontal scroll touch */
+@media (max-width: 768px) {
+  [style*="scrollSnapType"] {
+    -webkit-overflow-scrolling: touch;
+  }
+}
